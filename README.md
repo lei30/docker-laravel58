@@ -13,3 +13,16 @@ $ docker-compose down
 ```
 
 ## stage
+
+```bash
+# as root user
+$ adduser www
+$ usermod -aG sudo www && usermod -aG docker www
+$ su - www && cd ......
+
+$ docker-compose -f docker-compose-stage.yml -d up
+
+# goto {IP}:8080
+
+$ docker-compose -f docker-compose-stage.yml down
+```
